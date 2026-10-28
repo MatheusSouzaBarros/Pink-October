@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-contrast="normal">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outubro Rosa: Acolher & Prevenir</title>
+<meta name="description" content="Plataforma de acolhimento, orientação e prevenção ao câncer de mama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+
+<header class="site-header">
+ <div class="container bar">
+  <a class="logo" href="#topo" aria-label="Outubro Rosa: Acolher e Prevenir, início">
+   <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 14c-3-6-9-8-10-3s5 8 10 3zm0 0c3-6 9-8 10-3s-5 8-10 3zm-1 2l-5 11 4-2 2-4zm2 0l5 11-4-2-2-4z" fill="var(--primary)"/></svg>
+   <span>Outubro Rosa<small>Acolher &amp; Prevenir</small></span>
+  </a>
+  <nav id="nav" aria-label="Principal">
+   <ul>
+    <li><a href="#triagem">Sua primeira vez</a></li>
+    <li><a href="#caminho">Caminho no SUS</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#relato">Espaço seguro</a></li>
+    <li><a href="#mapa">Mapa</a></li>
+    <li><a href="#agenda">Consulta</a></li>
+    <li><a href="#ongs">Apoio</a></li>
+    <li><a href="#faq">FAQ</a></li>
+   </ul>
+  </nav>
+  <div class="tools">
+   <div class="group" role="group" aria-label="Tamanho da fonte">
+    <button class="btn-icon" data-font="-1" aria-label="Diminuir fonte">A−</button>
+    <button class="btn-icon" data-font="0" aria-label="Fonte padrão">A</button>
+    <button class="btn-icon" data-font="1" aria-label="Aumentar fonte">A+</button>
+   </div>
+   <button class="btn-icon" id="contrast" aria-pressed="false">Alto contraste</button>
+   <span id="auth-area"></span>
+   <button class="btn-icon menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+ </div>
+</header>
+
+<main id="main">
+<section class="hero" id="topo" aria-labelledby="h-hero">
+ <div class="container hero-grid">
+  <div>
+   <h1 id="h-hero">Descobrir cedo muda a história. Você não está sozinha.</h1>
+   <p class="lead">O diagnóstico precoce do câncer de mama aumenta muito as chances de cura. Aqui você encontra orientação, acolhimento e o caminho para cuidar de você, ou de quem você ama.</p>
+   <div class="actions">
+    <a class="btn btn-primary" href="#mapa">Encontrar unidade de saúde</a>
+    <a class="btn btn-outline" href="#relato">Compartilhar um relato</a>
+   </div>
+  </div>
+  <aside class="card hero-card"><strong>Plataforma aberta</strong><p>Navegue sem cadastro. Criar uma conta é opcional e serve apenas para guardar lembretes e preferências.</p></aside>
+ </div>
+</section>
+
+<section id="triagem" aria-labelledby="h-tri">
+ <div class="container">
+  <h2 id="h-tri">Sua primeira vez?</h2>
+  <p class="sub">Conte como você chegou. Vamos destacar o conteúdo mais útil em toda a página.</p>
+  <div class="profiles" role="group" aria-label="Escolha seu perfil">
+   <button class="profile" data-profile="me" aria-pressed="false"><b>Nunca fiz / Tenho dúvidas</b><span>Quero entender por onde começar.</span></button>
+   <button class="profile" data-profile="support" aria-pressed="false"><b>Quero apoiar alguém</b><span>Família ou amiga em foco.</span></button>
+   <button class="profile" data-profile="treat" aria-pressed="false"><b>Estou em tratamento / Diagnóstico recente</b><span>Preciso de apoio e direitos.</span></button>
+  </div>
+  <div id="triage-result" class="card result" aria-live="polite" hidden></div>
+ </div>
+</section>
+
+<section id="caminho" class="alt" aria-labelledby="h-cam">
+ <div class="container">
+  <h2 id="h-cam">Seu caminho no SUS em São Paulo</h2>
+  <p class="sub">Quatro passos, do primeiro contato ao início do tratamento.</p>
+  <ol class="timeline">
+   <li data-audience="me support"><h3>1. Acolhimento na UBS</h3><p>Vá à Unidade Básica de Saúde do seu bairro com documento com foto e, se tiver, Cartão SUS. A equipe avalia suas mamas e ouve suas dúvidas.</p></li>
+   <li data-audience="me support"><h3>2. Consulta e pedido de exame</h3><p>O profissional examina as mamas e, quando indicado, solicita a mamografia. Pelo SUS ela é garantida a partir dos 40 anos (Lei 11.664/2008).</p></li>
+   <li data-audience="me support treat"><h3>3. Agendamento</h3><p>O exame e eventuais encaminhamentos são agendados pela regulação do SUS. Anote datas e protocolos e, se houver demora, procure a ouvidoria (Disque Saúde 136).</p></li>
+   <li data-audience="treat support"><h3>4. Lei dos 60 dias</h3><p>Com diagnóstico confirmado, o tratamento pelo SUS deve começar em até 60 dias (Lei 12.732/2012). Peça orientação à assistente social do hospital sobre seus direitos.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section id="depoimentos" aria-labelledby="h-dep">
+ <div class="container">
+  <h2 id="h-dep">Histórias de superação</h2>
+  <p class="sub">Depoimentos ilustrativos: nomes e histórias fictícios, criados para informar e inspirar.</p>
+  <div class="grid" id="testimonials"></div>
+ </div>
+</section>
+
+<section id="relato" class="alt" aria-labelledby="h-rel">
+ <div class="container two">
+  <div>
+   <h2 id="h-rel">Espaço seguro</h2>
+   <p class="sub">Compartilhe um relato ou faça uma pergunta, sem se identificar.</p>
+   <form id="story-form" class="card" novalidate>
+    <fieldset><legend>O que você quer fazer?</legend>
+     <label class="opt"><input type="radio" name="kind" value="Relato" checked> Compartilhar relato</label>
+     <label class="opt"><input type="radio" name="kind" value="Pergunta"> Fazer pergunta anônima</label>
+    </fieldset>
+    <label for="story-text">Sua mensagem</label>
+    <textarea id="story-text" rows="5" maxlength="600" aria-describedby="story-err" placeholder="Escreva com calma. Aqui ninguém julga."></textarea>
+    <label class="check"><input type="checkbox" id="story-ok"> Autorizo exibir minha mensagem, sem identificação, na lista da comunidade neste navegador (opcional).</label>
+    <p id="story-err" class="error" role="alert"></p>
+    <button class="btn btn-primary" type="submit">Enviar de forma anônima</button>
+    <p class="hint">Demonstração: a mensagem é salva só no seu navegador (localStorage) e não é enviada a servidor.</p>
+   </form>
+  </div>
+  <div><h3>Mensagens da comunidade</h3><ul id="story-list" class="stories" aria-live="polite"></ul></div>
+ </div>
+</section>
+
+<section id="mapa" aria-labelledby="h-map">
+ <div class="container">
+  <h2 id="h-map">Onde fazer exames na Grande São Paulo</h2>
+  <p class="sub">Mapa com centros de referência. Não pedimos sua localização.</p>
+  <div class="map-grid">
+   <div id="map" role="region" aria-label="Mapa de unidades de saúde"></div>
+   <div>
+    <div id="unit-card" class="card" aria-live="polite"><h3>Selecione uma unidade</h3><p>Use o mapa ou a lista abaixo.</p></div>
+    <ul id="unit-list" class="unit-list"></ul>
+    <p class="hint">Para atendimento pelo SUS, comece pela UBS do seu bairro (Central 156). Confirme telefone e horários antes de ir.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="agenda" class="alt" aria-labelledby="h-ag">
+ <div class="container two">
+  <div>
+   <h2 id="h-ag">Marcador de consulta</h2>
+   <p class="sub">Registre sua consulta ou exame e leve para o seu calendário.</p>
+   <form id="appt-form" class="card" novalidate>
+    <label for="a-title">O que será feito</label>
+    <input id="a-title" value="Consulta / exame de rotina" required>
+    <div class="row">
+     <div><label for="a-date">Data</label><input id="a-date" type="date" required></div>
+     <div><label for="a-time">Hora</label><input id="a-time" type="time" value="09:00" required></div>
+    </div>
+    <label for="a-place">Local</label>
+    <input id="a-place" list="places" placeholder="Ex.: UBS do meu bairro" required>
+    <datalist id="places"></datalist>
+    <label for="a-email">E-mail para confirmação e lembretes (opcional)</label>
+    <input id="a-email" type="email" autocomplete="email">
+    <p id="a-err" class="error" role="alert"></p>
+    <button class="btn btn-primary" type="submit">Marcar consulta</button>
+   </form>
+  </div>
+  <div id="appt-result" class="card" aria-live="polite"><h3>Seu lembrete</h3><p>Preencha o formulário para gerar o link do Google Agenda e o arquivo .ics (Apple e Outlook).</p></div>
+ </div>
+</section>
+
+<section id="ongs" aria-labelledby="h-ong">
+ <div class="container">
+  <h2 id="h-ong">ONGs &amp; redes de apoio</h2>
+  <p class="sub">Canais de apoio, doação e orientação jurídica ou psicológica.</p>
+  <div class="grid">
+   <article class="card" data-audience="treat support"><h3>FEMAMA</h3><p>Federação de ONGs: informação e defesa de direitos das pacientes.</p><a href="https://www.femama.org.br" target="_blank" rel="noopener">femama.org.br</a></article>
+   <article class="card" data-audience="treat support"><h3>Instituto Neo Mama</h3><p>Acolhimento e acesso à informação e ao tratamento.</p><a href="https://www.neomama.org.br" target="_blank" rel="noopener">neomama.org.br</a></article>
+   <article class="card" data-audience="me treat"><h3>Instituto Laço Rosa</h3><p>Orientação a pacientes e familiares e conscientização sobre prevenção.</p><a href="https://www.lacorosa.org.br" target="_blank" rel="noopener">lacorosa.org.br</a></article>
+   <article class="card" data-audience="treat support"><h3>Instituto Oncoguia</h3><p>Informação confiável sobre tratamentos e direitos; apoio a cuidadores.</p><a href="https://www.oncoguia.org.br" target="_blank" rel="noopener">oncoguia.org.br</a></article>
+   <article class="card" data-audience="treat support"><h3>Rede Feminina de Combate ao Câncer</h3><p>Voluntariado, doações e apoio a quem está em tratamento.</p><a href="https://www.rfcc.org.br" target="_blank" rel="noopener">rfcc.org.br</a></article>
+   <article class="card" data-audience="me support treat"><h3>Disque Saúde 136</h3><p>Dúvidas, orientações e reclamações sobre o SUS. Ligação gratuita.</p><a href="tel:136">Ligar para 136</a></article>
+  </div>
+ </div>
+</section>
+
+<section id="faq" class="alt" aria-labelledby="h-faq">
+ <div class="container narrow">
+  <h2 id="h-faq">Dúvidas frequentes</h2>
+  <div class="accordion" id="accordion">
+   <div class="acc-item" data-audience="me"><h3><button aria-expanded="false" aria-controls="f1">Quando começar a fazer mamografia?</button></h3><div id="f1" hidden>Pelo SUS, a partir dos 40 anos. A rotina recomendada pelo Ministério da Saúde é a cada dois anos entre 50 e 74 anos. Com histórico familiar ou outro risco, o médico pode indicar diferente.</div></div>
+   <div class="acc-item" data-audience="me"><h3><button aria-expanded="false" aria-controls="f2">A mamografia dói?</button></h3><div id="f2" hidden>Pode causar desconforto passageiro pela compressão da mama por alguns segundos. A dose de radiação é baixa e o benefício do diagnóstico precoce é maior que o risco.</div></div>
+   <div class="acc-item" data-audience="me support"><h3><button aria-expanded="false" aria-controls="f3">Quais são os sinais de alerta?</button></h3><div id="f3" hidden>Nódulo na mama ou axila, alteração da pele (vermelhidão, retração, aspecto de casca de laranja), mudança no mamilo e secreção espontânea. Nem toda mudança é câncer, mas todas merecem avaliação médica.</div></div>
+   <div class="acc-item" data-audience="me"><h3><button aria-expanded="false" aria-controls="f4">O autoexame substitui a mamografia?</button></h3><div id="f4" hidden>Não. Conhecer o próprio corpo ajuda a notar mudanças, mas não substitui o exame clínico nem a mamografia.</div></div>
+   <div class="acc-item" data-audience="treat"><h3><button aria-expanded="false" aria-controls="f5">Quais são meus direitos?</button></h3><div id="f5" hidden>Início do tratamento em até 60 dias (Lei 12.732/2012), reconstrução mamária pelo SUS (Lei 12.802/2013) e, conforme o caso, outros benefícios. A assistente social do hospital pode orientar.</div></div>
+   <div class="acc-item" data-audience="support"><h3><button aria-expanded="false" aria-controls="f6">Como posso ajudar alguém querida?</button></h3><div id="f6" hidden>Ouça sem julgar, ofereça companhia nas consultas, ajude em tarefas práticas e respeite o ritmo da pessoa. Perguntar "do que você precisa hoje?" costuma ajudar mais que conselhos.</div></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="site-footer">
+ <div class="container">
+  <h2>Cuidar de você nunca é exagero.</h2>
+  <p><strong>Emergência e apoio:</strong> Disque Saúde <a href="tel:136">136</a> · CVV <a href="tel:188">188</a> (24 h, gratuito) · SAMU <a href="tel:192">192</a></p>
+  <details class="outbox"><summary>Caixa de saída (e-mails simulados)</summary><ul id="outbox-list"><li>Nenhum e-mail simulado ainda.</li></ul></details>
+  <p class="legal"><strong>Aviso legal:</strong> conteúdo informativo, que não substitui consulta, diagnóstico ou tratamento médico. Depoimentos fictícios. Dados de unidades e leis devem ser conferidos em fontes oficiais. Projeto de responsabilidade social (TCC): Outubro Rosa: Acolher &amp; Prevenir.</p>
+ </div>
+</footer>
+
+<dialog id="auth-dialog" aria-labelledby="auth-title">
+ <form id="auth-form" novalidate>
+  <h2 id="auth-title">Salvar seu progresso?</h2>
+  <p id="auth-reason"></p>
+  <div id="auth-name-wrap"><label for="auth-name">Nome</label><input id="auth-name" autocomplete="name"></div>
+  <label for="auth-email">E-mail</label><input id="auth-email" type="email" autocomplete="email">
+  <label for="auth-pass">Senha (mínimo 8 caracteres)</label><input id="auth-pass" type="password" autocomplete="current-password">
+  <label class="check" id="auth-treat-wrap"><input type="checkbox" id="auth-treat"> Estou em acompanhamento ou tratamento (opcional). Usado só para adaptar o tom dos e-mails.</label>
+  <p id="auth-error" class="error" role="alert"></p>
+  <div class="actions">
+   <button class="btn btn-primary" type="submit" id="auth-submit">Criar conta</button>
+   <button class="btn btn-outline" type="button" id="auth-switch">Já tenho conta</button>
+   <button class="btn btn-link" type="button" id="auth-close">Agora não</button>
+  </div>
+  <p class="hint">Demonstração: dados ficam só neste navegador. Em produção, use um servidor seguro.</p>
+ </form>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

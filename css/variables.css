@@ -1,0 +1,14 @@
+/* Design tokens */
+:root{
+ --bg:#FDF2F8; --surface:#FFFFFF;
+ --primary:#DB2777; --primary-dark:#9D174D; --secondary:#F472B6;
+ --text:#1F2937; --muted:#6B7280; --muted-light:#9CA3AF;
+ --card:#FFF1F2; --card-alt:#FCE7F3; --line:#F9CFE5;
+ --radius:18px; --shadow:0 8px 24px rgba(219,39,119,.10);
+ --font:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+ --maxw:1120px;
+}
+html[data-contrast="high"]{
+ --bg:#000; --surface:#000; --primary:#FFEB3B; --primary-dark:#FFEB3B; --secondary:#FFEB3B;
+ --text:#fff; --muted:#fff; --muted-light:#fff; --card:#111; --card-alt:#111; --line:#fff; --shadow:none;
+}

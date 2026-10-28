@@ -1,0 +1,39 @@
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.narrow{max-width:780px}
+section{padding:80px 0}
+.alt{background:var(--surface)}
+.sub{color:var(--muted);max-width:60ch;margin-bottom:32px}
+.site-header{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:72px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;color:var(--primary-dark);line-height:1.1}
+.logo small{display:block;font-weight:500;font-size:.75rem;color:var(--muted)}
+#nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+#nav a{display:block;padding:8px 10px;border-radius:999px;text-decoration:none;color:var(--text);font-size:.88rem;font-weight:500}
+#nav a:hover{background:var(--card-alt)}
+.tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.group{display:flex;gap:4px}
+.menu-btn{display:none}
+.hero{padding:88px 0;background:radial-gradient(circle at 85% 15%,var(--card-alt),transparent 50%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:center}
+.lead{font-size:1.2rem;color:var(--muted);max-width:56ch}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.profiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.map-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.site-footer{background:var(--primary-dark);color:#fff;padding:56px 0 32px}
+.site-footer h2,.site-footer a{color:#fff}
+html[data-contrast="high"] .site-footer{border-top:2px solid #fff}
+@media(max-width:960px){
+ .hero-grid,.two,.map-grid{grid-template-columns:1fr}
+ .grid,.profiles{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+ section{padding:56px 0}
+ .grid,.profiles,.row{grid-template-columns:1fr}
+ .menu-btn{display:inline-block}
+ #nav{display:none;width:100%;order:5}
+ #nav.open{display:block}
+ #nav ul{flex-direction:column}
+}
